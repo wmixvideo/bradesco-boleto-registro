@@ -7,12 +7,30 @@
   <version>1.0-SNAPSHOT</version>
   <name>bradesco-boleto-registro</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+
+    <dependencies>
+      <dependency>
+      	  <groupId>junit</groupId>
+    	  <artifactId>junit</artifactId>
+    	  <version>4.8.1</version>
+    	  <scope>test</scope>
+      </dependency>
+      <dependency>
+    	  <groupId>com.google.code.gson</groupId>
+    	  <artifactId>gson</artifactId>
+    	  <version>2.8.1</version>
+	  </dependency>
+	  <dependency>
+	      <groupId>commons-io</groupId>
+	      <artifactId>commons-io</artifactId>
+	      <version>2.5</version>
+	  </dependency>
+
+	  <!-- HttpClient -->
+  	  <dependency>
+	      <groupId>commons-httpclient</groupId>
+	      <artifactId>commons-httpclient</artifactId>
+	      <version>3.1</version>
+	  </dependency>
+    </dependencies>
 </project>
