@@ -1,6 +1,6 @@
-package com.github.wmixvideo.classes;
+package com.github.wmixvideo.bradescoboleto.classes;
 
-public enum StatusRetorno {
+public enum RegistroBoletoStatus {
 
     SERVICO_INDISPONIVEL("-99", "Servi\u00e7o indispon\u00edvel no momento. Tente novamente mais tarde"),
     TAMANHO_INVALIDO("-4", "Tamanho do campo inv\u00e1lido"),
@@ -105,7 +105,7 @@ public enum StatusRetorno {
     private final String codigo;
     private final String descricao;
 
-    StatusRetorno(final String codigo, final String descricao) {
+    RegistroBoletoStatus(final String codigo, final String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -114,8 +114,8 @@ public enum StatusRetorno {
         return this.codigo;
     }
 
-    public static StatusRetorno valueOfCodigo(final String codigo) {
-        for (final StatusRetorno ambiente : StatusRetorno.values()) {
+    public static RegistroBoletoStatus valueOfCodigo(final String codigo) {
+        for (final RegistroBoletoStatus ambiente : RegistroBoletoStatus.values()) {
             if (ambiente.getCodigo().equalsIgnoreCase(codigo)) {
                 return ambiente;
             }

@@ -1,4 +1,4 @@
-package com.github.wmixvideo;
+package com.github.wmixvideo.bradescoboleto;
 
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -21,14 +21,6 @@ public abstract class BBRConfig {
      * @throws KeyStoreException Caso não consiga carregar o KeyStore.
      */
     public abstract KeyStore getCertificadoKeyStore() throws KeyStoreException;
-
-    /**
-     * Retorna o nome do alias do certificado dentro do {@link KeyStore} retornado por {@link #getCertificadoKeyStore()}. Caso seja retornado {@code null}, será utilizado o primeiro alias do {@link KeyStore}.
-     * @return o nome do alias do certificado ou {@code null}
-     */
-    public String getCertificadoAlias() {
-        return null;
-    }
 
     /**
      * Senha do certificado pessoal do emissor, contido dentro do KeyStore do certificado.

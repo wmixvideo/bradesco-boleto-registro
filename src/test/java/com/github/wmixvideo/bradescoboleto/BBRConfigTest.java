@@ -1,9 +1,11 @@
-package com.github.wmixvideo;
+package com.github.wmixvideo.bradescoboleto;
 
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 
 import org.junit.Test;
+
+import com.github.wmixvideo.bradescoboleto.BBRConfig;
 
 import junit.framework.Assert;
 

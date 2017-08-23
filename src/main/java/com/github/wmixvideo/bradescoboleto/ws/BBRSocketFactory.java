@@ -1,8 +1,6 @@
-package com.github.wmixvideo.ws;
+package com.github.wmixvideo.bradescoboleto.ws;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.security.*;
 import java.security.cert.CertificateException;
@@ -10,38 +8,18 @@ import java.security.cert.X509Certificate;
 
 import javax.net.ssl.*;
 
-import org.apache.commons.httpclient.params.HttpConnectionParams;
-import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
+import com.github.wmixvideo.bradescoboleto.BBRConfig;
 
-import com.github.wmixvideo.BBRConfig;
+class BBRSocketFactory {
 
-class BBRSocketFactory implements ProtocolSocketFactory {
-
-    private final BBRConfig config;
     private final SSLContext context;
 
     BBRSocketFactory(final BBRConfig config) throws CertificateException, UnrecoverableKeyException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException, IOException {
-        this.config = config;
         this.context = BBRSocketFactory.createSSLContext(config);
     }
 
-    @Override
-    public Socket createSocket(final String host, final int port, final InetAddress localAddress, final int localPort, final HttpConnectionParams params) throws IOException {
-        final Socket socket = this.context.getSocketFactory().createSocket();
-        ((SSLSocket) socket).setEnabledProtocols(new String[] { this.config.getSSLProtocolo() });
-        socket.bind(new InetSocketAddress(localAddress, localPort));
-        socket.connect(new InetSocketAddress(host, port), 60000);
-        return socket;
-    }
-
-    @Override
-    public Socket createSocket(final String host, final int port, final InetAddress clientHost, final int clientPort) throws IOException {
-        return this.context.getSocketFactory().createSocket(host, port, clientHost, clientPort);
-    }
-
-    @Override
-    public Socket createSocket(final String host, final int port) throws IOException {
-        return this.context.getSocketFactory().createSocket(host, port);
+    public SSLContext getContext() {
+        return this.context;
     }
 
     private static SSLContext createSSLContext(final BBRConfig config) throws UnrecoverableKeyException, CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, KeyManagementException {
@@ -53,7 +31,7 @@ class BBRSocketFactory implements ProtocolSocketFactory {
     }
 
     private static KeyManager[] createKeyManagers(final BBRConfig config) throws UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
-        final String alias = config.getCertificadoAlias() != null ? config.getCertificadoAlias() : config.getCertificadoKeyStore().aliases().nextElement();
+        final String alias = config.getCertificadoKeyStore().aliases().nextElement();
         final X509Certificate certificate = (X509Certificate) config.getCertificadoKeyStore().getCertificate(alias);
         final PrivateKey privateKey = (PrivateKey) config.getCertificadoKeyStore().getKey(alias, config.getCertificadoSenha().toCharArray());
         return new KeyManager[] { new BBRKeyManager(certificate, privateKey) };

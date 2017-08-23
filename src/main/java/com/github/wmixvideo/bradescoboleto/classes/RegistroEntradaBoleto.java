@@ -1,4 +1,4 @@
-package com.github.wmixvideo.classes;
+package com.github.wmixvideo.bradescoboleto.classes;
 
 public class RegistroEntradaBoleto {
 
@@ -73,45 +73,85 @@ public class RegistroEntradaBoleto {
     private String endEletronicoSacadorAvalista;
 
     public RegistroEntradaBoleto() {
-        this.preencherFixos();
+        this.preencherCampos();
     }
 
-    public void preencherFixos() {
+    public void preencherCampos() {
         this.cdTipoAcesso = "2";
         this.clubBanco = "2269651";
         this.cdTipoContrato = "48";
         this.cdBanco = "237";
         this.tpRegistro = "1";
         this.tpVencimento = "0";
+        this.nuCPFCNPJ = "0";
+        this.filialCPFCPNJ = "0";
+        this.ctrlCPFCNPJ = "0";
+        this.nuSequenciaContrato = "0";
+        this.idProduto = "0";
+        this.nuNegociacao = "0";
+        this.eNuSequenciaContrato = "0";
+        this.cdProduto = "0";
+        this.nuTitulo = "0";
+        this.nuCliente = "";
+        this.dtEmissaoTitulo = "";
+        this.dtVencimentoTitulo = "";
+        this.vlNominalTitulo = "0";
+        this.cdEspecieTitulo = "0";
+        this.tpProtestoAutomaticoNegativacao = "0";
+        this.prazoProtestoAutomaticoNegativacao = "0";
+        this.controleParticipante = "";
+        this.cdPagamentoParcial = "";
+        this.qtdePagamentoParcial = "0";
+        this.percentualJuros = "0";
+        this.vlJuros = "0";
+        this.qtdeDiasJuros = "0";
+        this.percentualMulta = "0";
+        this.vlMulta = "0";
+        this.qtdeDiasMulta = "0";
+        this.percentualDesconto1 = "0";
+        this.vlDesconto1 = "0";
+        this.dataLimiteDesconto1 = "";
+        this.percentualDesconto2 = "0";
+        this.vlDesconto2 = "0";
+        this.dataLimiteDesconto2 = "";
+        this.percentualDesconto3 = "0";
+        this.vlDesconto3 = "0";
+        this.dataLimiteDesconto3 = "";
+        this.prazoBonificacao = "0";
+        this.vlBonificacao = "0";
+        this.dtLimiteBonificacao = "";
+        this.vlAbatimento = "0";
+        this.VlIOF = "0";
+        this.nomePagador = "";
+        this.logradouroPagador = "";
+        this.nuLogradouroPagador = "";
+        this.complementoLogradouroPagador = "";
+        this.cepPagador = "0";
+        this.complementoCepPagador = "0";
+        this.bairroPagador = "";
+        this.municipioPagador = "";
+        this.ufPagador = "";
+        this.cdIndCpfcnpjPagador = "0";
+        this.nuCpfcnpjPagador = "0";
+        this.endEletronicoPagador = "";
+        this.nomeSacadorAvalista = "";
+        this.logradouroSacadorAvalista = "";
+        this.nuLogradouroSacadorAvalista = "";
+        this.complementoLogradouroSacadorAvalista = "";
+        this.cepSacadorAvalista = "0";
+        this.complementoCepSacadorAvalista = "0";
+        this.bairroSacadorAvalista = "";
+        this.municipioSacadorAvalista = "";
+        this.ufSacadorAvalista = "";
+        this.cdIndCpfcnpjSacadorAvalista = "0";
+        this.nuIndCpfcnpjSacadorAvalista = "0";
+        this.endEletronicoSacadorAvalista = "";
     }
 
     public RegistroEntradaBoleto setNuCPFCNPJ(final String nuCPFCNPJ) {
-        this.nuCPFCNPJ = nuCPFCNPJ;
-        return this;
-    }
-
-    public RegistroEntradaBoleto setFilialCPFCPNJ(final String filialCPFCPNJ) {
-        this.filialCPFCPNJ = filialCPFCPNJ;
-        return this;
-    }
-
-    public RegistroEntradaBoleto setCtrlCPFCNPJ(final String ctrlCPFCNPJ) {
-        this.ctrlCPFCNPJ = ctrlCPFCNPJ;
-        return this;
-    }
-
-    public RegistroEntradaBoleto setCdTipoAcesso(final String cdTipoAcesso) {
-        this.cdTipoAcesso = cdTipoAcesso;
-        return this;
-    }
-
-    public RegistroEntradaBoleto setClubBanco(final String clubBanco) {
-        this.clubBanco = clubBanco;
-        return this;
-    }
-
-    public RegistroEntradaBoleto setCdTipoContrato(final String cdTipoContrato) {
-        this.cdTipoContrato = cdTipoContrato;
+        this.nuCPFCNPJ = nuCPFCNPJ.length() == 14 ? String.format("0%s", nuCPFCNPJ.substring(0, 8)) : nuCPFCNPJ.substring(0, 9);
+        this.filialCPFCPNJ = nuCPFCNPJ.length() == 14 ? nuCPFCNPJ.substring(8, 12) : "0";
+        this.ctrlCPFCNPJ = nuCPFCNPJ.substring(nuCPFCNPJ.length() - 2, nuCPFCNPJ.length());
         return this;
     }
 
@@ -167,11 +207,6 @@ public class RegistroEntradaBoleto {
 
     public RegistroEntradaBoleto setDtVencimentoTitulo(final String dtVencimentoTitulo) {
         this.dtVencimentoTitulo = dtVencimentoTitulo;
-        return this;
-    }
-
-    public RegistroEntradaBoleto setTpVencimento(final String tpVencimento) {
-        this.tpVencimento = tpVencimento;
         return this;
     }
 
@@ -331,12 +366,8 @@ public class RegistroEntradaBoleto {
     }
 
     public RegistroEntradaBoleto setCepPagador(final String cepPagador) {
-        this.cepPagador = cepPagador;
-        return this;
-    }
-
-    public RegistroEntradaBoleto setComplementoCepPagador(final String complementoCepPagador) {
-        this.complementoCepPagador = complementoCepPagador;
+        this.cepPagador = cepPagador.substring(0, 5);
+        this.complementoCepPagador = cepPagador.substring(5, 8);
         return this;
     }
 
@@ -355,13 +386,9 @@ public class RegistroEntradaBoleto {
         return this;
     }
 
-    public RegistroEntradaBoleto setCdIndCpfcnpjPagador(final String cdIndCpfcnpjPagador) {
-        this.cdIndCpfcnpjPagador = cdIndCpfcnpjPagador;
-        return this;
-    }
-
     public RegistroEntradaBoleto setNuCpfcnpjPagador(final String nuCpfcnpjPagador) {
-        this.nuCpfcnpjPagador = nuCpfcnpjPagador;
+        this.nuCpfcnpjPagador = this.nuCPFCNPJ.length() == 14 ? nuCpfcnpjPagador : String.format("000%s", nuCpfcnpjPagador);
+        this.cdIndCpfcnpjPagador = nuCpfcnpjPagador.length() == 14 ? "2" : "1";
         return this;
     }
 
@@ -428,6 +455,282 @@ public class RegistroEntradaBoleto {
     public RegistroEntradaBoleto setEndEletronicoSacadorAvalista(final String endEletronicoSacadorAvalista) {
         this.endEletronicoSacadorAvalista = endEletronicoSacadorAvalista;
         return this;
+    }
+
+    public String getNuCPFCNPJ() {
+        return this.nuCPFCNPJ;
+    }
+
+    public String getFilialCPFCPNJ() {
+        return this.filialCPFCPNJ;
+    }
+
+    public String getCtrlCPFCNPJ() {
+        return this.ctrlCPFCNPJ;
+    }
+
+    public String getCdTipoAcesso() {
+        return this.cdTipoAcesso;
+    }
+
+    public String getClubBanco() {
+        return this.clubBanco;
+    }
+
+    public String getCdTipoContrato() {
+        return this.cdTipoContrato;
+    }
+
+    public String getNuSequenciaContrato() {
+        return this.nuSequenciaContrato;
+    }
+
+    public String getIdProduto() {
+        return this.idProduto;
+    }
+
+    public String getNuNegociacao() {
+        return this.nuNegociacao;
+    }
+
+    public String getCdBanco() {
+        return this.cdBanco;
+    }
+
+    public String geteNuSequenciaContrato() {
+        return this.eNuSequenciaContrato;
+    }
+
+    public String getTpRegistro() {
+        return this.tpRegistro;
+    }
+
+    public String getCdProduto() {
+        return this.cdProduto;
+    }
+
+    public String getNuTitulo() {
+        return this.nuTitulo;
+    }
+
+    public String getNuCliente() {
+        return this.nuCliente;
+    }
+
+    public String getDtEmissaoTitulo() {
+        return this.dtEmissaoTitulo;
+    }
+
+    public String getDtVencimentoTitulo() {
+        return this.dtVencimentoTitulo;
+    }
+
+    public String getTpVencimento() {
+        return this.tpVencimento;
+    }
+
+    public String getVlNominalTitulo() {
+        return this.vlNominalTitulo;
+    }
+
+    public String getCdEspecieTitulo() {
+        return this.cdEspecieTitulo;
+    }
+
+    public String getTpProtestoAutomaticoNegativacao() {
+        return this.tpProtestoAutomaticoNegativacao;
+    }
+
+    public String getPrazoProtestoAutomaticoNegativacao() {
+        return this.prazoProtestoAutomaticoNegativacao;
+    }
+
+    public String getControleParticipante() {
+        return this.controleParticipante;
+    }
+
+    public String getCdPagamentoParcial() {
+        return this.cdPagamentoParcial;
+    }
+
+    public String getQtdePagamentoParcial() {
+        return this.qtdePagamentoParcial;
+    }
+
+    public String getPercentualJuros() {
+        return this.percentualJuros;
+    }
+
+    public String getVlJuros() {
+        return this.vlJuros;
+    }
+
+    public String getQtdeDiasJuros() {
+        return this.qtdeDiasJuros;
+    }
+
+    public String getPercentualMulta() {
+        return this.percentualMulta;
+    }
+
+    public String getVlMulta() {
+        return this.vlMulta;
+    }
+
+    public String getQtdeDiasMulta() {
+        return this.qtdeDiasMulta;
+    }
+
+    public String getPercentualDesconto1() {
+        return this.percentualDesconto1;
+    }
+
+    public String getVlDesconto1() {
+        return this.vlDesconto1;
+    }
+
+    public String getDataLimiteDesconto1() {
+        return this.dataLimiteDesconto1;
+    }
+
+    public String getPercentualDesconto2() {
+        return this.percentualDesconto2;
+    }
+
+    public String getVlDesconto2() {
+        return this.vlDesconto2;
+    }
+
+    public String getDataLimiteDesconto2() {
+        return this.dataLimiteDesconto2;
+    }
+
+    public String getPercentualDesconto3() {
+        return this.percentualDesconto3;
+    }
+
+    public String getVlDesconto3() {
+        return this.vlDesconto3;
+    }
+
+    public String getDataLimiteDesconto3() {
+        return this.dataLimiteDesconto3;
+    }
+
+    public String getPrazoBonificacao() {
+        return this.prazoBonificacao;
+    }
+
+    public String getVlBonificacao() {
+        return this.vlBonificacao;
+    }
+
+    public String getDtLimiteBonificacao() {
+        return this.dtLimiteBonificacao;
+    }
+
+    public String getVlAbatimento() {
+        return this.vlAbatimento;
+    }
+
+    public String getVlIOF() {
+        return this.VlIOF;
+    }
+
+    public String getNomePagador() {
+        return this.nomePagador;
+    }
+
+    public String getLogradouroPagador() {
+        return this.logradouroPagador;
+    }
+
+    public String getNuLogradouroPagador() {
+        return this.nuLogradouroPagador;
+    }
+
+    public String getComplementoLogradouroPagador() {
+        return this.complementoLogradouroPagador;
+    }
+
+    public String getCepPagador() {
+        return this.cepPagador;
+    }
+
+    public String getComplementoCepPagador() {
+        return this.complementoCepPagador;
+    }
+
+    public String getBairroPagador() {
+        return this.bairroPagador;
+    }
+
+    public String getMunicipioPagador() {
+        return this.municipioPagador;
+    }
+
+    public String getUfPagador() {
+        return this.ufPagador;
+    }
+
+    public String getCdIndCpfcnpjPagador() {
+        return this.cdIndCpfcnpjPagador;
+    }
+
+    public String getNuCpfcnpjPagador() {
+        return this.nuCpfcnpjPagador;
+    }
+
+    public String getEndEletronicoPagador() {
+        return this.endEletronicoPagador;
+    }
+
+    public String getNomeSacadorAvalista() {
+        return this.nomeSacadorAvalista;
+    }
+
+    public String getLogradouroSacadorAvalista() {
+        return this.logradouroSacadorAvalista;
+    }
+
+    public String getNuLogradouroSacadorAvalista() {
+        return this.nuLogradouroSacadorAvalista;
+    }
+
+    public String getComplementoLogradouroSacadorAvalista() {
+        return this.complementoLogradouroSacadorAvalista;
+    }
+
+    public String getCepSacadorAvalista() {
+        return this.cepSacadorAvalista;
+    }
+
+    public String getComplementoCepSacadorAvalista() {
+        return this.complementoCepSacadorAvalista;
+    }
+
+    public String getBairroSacadorAvalista() {
+        return this.bairroSacadorAvalista;
+    }
+
+    public String getMunicipioSacadorAvalista() {
+        return this.municipioSacadorAvalista;
+    }
+
+    public String getUfSacadorAvalista() {
+        return this.ufSacadorAvalista;
+    }
+
+    public String getCdIndCpfcnpjSacadorAvalista() {
+        return this.cdIndCpfcnpjSacadorAvalista;
+    }
+
+    public String getNuIndCpfcnpjSacadorAvalista() {
+        return this.nuIndCpfcnpjSacadorAvalista;
+    }
+
+    public String getEndEletronicoSacadorAvalista() {
+        return this.endEletronicoSacadorAvalista;
     }
 
 }

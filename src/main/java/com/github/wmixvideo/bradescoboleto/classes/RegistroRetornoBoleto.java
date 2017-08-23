@@ -1,4 +1,4 @@
-package com.github.wmixvideo.classes;
+package com.github.wmixvideo.bradescoboleto.classes;
 
 public class RegistroRetornoBoleto {
 

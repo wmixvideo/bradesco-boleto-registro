@@ -1,4 +1,4 @@
-package com.github.wmixvideo;
+package com.github.wmixvideo.bradescoboleto;
 
 public enum BBRAmbiente {
 
