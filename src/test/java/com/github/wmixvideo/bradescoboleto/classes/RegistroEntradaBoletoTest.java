@@ -3,8 +3,6 @@ package com.github.wmixvideo.bradescoboleto.classes;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.github.wmixvideo.bradescoboleto.classes.RegistroEntradaBoleto;
-
 public class RegistroEntradaBoletoTest {
 
     @Test
@@ -22,7 +20,7 @@ public class RegistroEntradaBoletoTest {
     public void testDadosCnpj() {
         final RegistroEntradaBoleto registro = new RegistroEntradaBoleto().setNuCPFCNPJ("12345678123456");
         Assert.assertEquals("012345678", registro.getNuCPFCNPJ());
-        Assert.assertEquals("1234", registro.getFilialCPFCPNJ());
+        Assert.assertEquals("1234", registro.getFilialCPFCNPJ());
         Assert.assertEquals("56", registro.getCtrlCPFCNPJ());
     }
 
@@ -30,7 +28,7 @@ public class RegistroEntradaBoletoTest {
     public void testDadosCpf() {
         final RegistroEntradaBoleto registro = new RegistroEntradaBoleto().setNuCPFCNPJ("12345678912");
         Assert.assertEquals("123456789", registro.getNuCPFCNPJ());
-        Assert.assertEquals("0", registro.getFilialCPFCPNJ());
+        Assert.assertEquals("0", registro.getFilialCPFCNPJ());
         Assert.assertEquals("12", registro.getCtrlCPFCNPJ());
     }
 

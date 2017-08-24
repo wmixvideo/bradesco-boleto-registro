@@ -26,6 +26,7 @@ public class WSRegistroBoleto implements BBRLoggable {
         this.getLogger().debug("Dados para registro: {}", dadosEntradaJson);
 
         final String dadoEntradaAssinadoBase64 = this.geraArquivoAssinadoBase64(config, dadosEntradaJson);
+        this.getLogger().debug("Dados assinados para registro: {}", dadoEntradaAssinadoBase64);
 
         final SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(new BBRSocketFactory(config).getContext());
         try (final CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build()) {
@@ -40,7 +41,8 @@ public class WSRegistroBoleto implements BBRLoggable {
             final Matcher m = Pattern.compile("<return>(.+?)</return>", Pattern.CASE_INSENSITIVE).matcher(stringResposta);
             final String respostaJson = m.find() ? m.group(1) : "";
             this.getLogger().debug("Resposta json: {}", respostaJson);
-            return new Gson().fromJson(respostaJson, RegistroRetornoBoleto.class);
+            final String respostaJsonLimpa = respostaJson.substring(respostaJson.lastIndexOf(",") + 1).trim().equals("}") ? respostaJson.substring(0, respostaJson.lastIndexOf(",")) + "}" : respostaJson;
+            return new Gson().fromJson(respostaJsonLimpa, RegistroRetornoBoleto.class);
         }
     }
 

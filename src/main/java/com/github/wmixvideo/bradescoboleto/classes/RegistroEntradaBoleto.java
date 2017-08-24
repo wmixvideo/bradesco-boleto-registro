@@ -3,7 +3,7 @@ package com.github.wmixvideo.bradescoboleto.classes;
 public class RegistroEntradaBoleto {
 
     private String nuCPFCNPJ;
-    private String filialCPFCPNJ;
+    private String filialCPFCNPJ;
     private String ctrlCPFCNPJ;
     private String cdTipoAcesso;
     private String clubBanco;
@@ -43,10 +43,11 @@ public class RegistroEntradaBoleto {
     private String vlDesconto3;
     private String dataLimiteDesconto3;
     private String prazoBonificacao;
+    private String percentualBonificacao;
     private String vlBonificacao;
     private String dtLimiteBonificacao;
     private String vlAbatimento;
-    private String VlIOF;
+    private String vlIOF;
     private String nomePagador;
     private String logradouroPagador;
     private String nuLogradouroPagador;
@@ -69,7 +70,7 @@ public class RegistroEntradaBoleto {
     private String municipioSacadorAvalista;
     private String ufSacadorAvalista;
     private String cdIndCpfcnpjSacadorAvalista;
-    private String nuIndCpfcnpjSacadorAvalista;
+    private String nuCpfcnpjSacadorAvalista;
     private String endEletronicoSacadorAvalista;
 
     public RegistroEntradaBoleto() {
@@ -84,7 +85,7 @@ public class RegistroEntradaBoleto {
         this.tpRegistro = "1";
         this.tpVencimento = "0";
         this.nuCPFCNPJ = "0";
-        this.filialCPFCPNJ = "0";
+        this.filialCPFCNPJ = "0";
         this.ctrlCPFCNPJ = "0";
         this.nuSequenciaContrato = "0";
         this.idProduto = "0";
@@ -117,11 +118,12 @@ public class RegistroEntradaBoleto {
         this.percentualDesconto3 = "0";
         this.vlDesconto3 = "0";
         this.dataLimiteDesconto3 = "";
+        this.percentualBonificacao = "0";
         this.prazoBonificacao = "0";
         this.vlBonificacao = "0";
         this.dtLimiteBonificacao = "";
         this.vlAbatimento = "0";
-        this.VlIOF = "0";
+        this.vlIOF = "0";
         this.nomePagador = "";
         this.logradouroPagador = "";
         this.nuLogradouroPagador = "";
@@ -144,13 +146,13 @@ public class RegistroEntradaBoleto {
         this.municipioSacadorAvalista = "";
         this.ufSacadorAvalista = "";
         this.cdIndCpfcnpjSacadorAvalista = "0";
-        this.nuIndCpfcnpjSacadorAvalista = "0";
+        this.nuCpfcnpjSacadorAvalista = "0";
         this.endEletronicoSacadorAvalista = "";
     }
 
     public RegistroEntradaBoleto setNuCPFCNPJ(final String nuCPFCNPJ) {
         this.nuCPFCNPJ = nuCPFCNPJ.length() == 14 ? String.format("0%s", nuCPFCNPJ.substring(0, 8)) : nuCPFCNPJ.substring(0, 9);
-        this.filialCPFCPNJ = nuCPFCNPJ.length() == 14 ? nuCPFCNPJ.substring(8, 12) : "0";
+        this.filialCPFCNPJ = nuCPFCNPJ.length() == 14 ? nuCPFCNPJ.substring(8, 12) : "0";
         this.ctrlCPFCNPJ = nuCPFCNPJ.substring(nuCPFCNPJ.length() - 2, nuCPFCNPJ.length());
         return this;
     }
@@ -325,6 +327,10 @@ public class RegistroEntradaBoleto {
         return this;
     }
 
+    public void setPercentualBonificacao(final String percentualBonificacao) {
+        this.percentualBonificacao = percentualBonificacao;
+    }
+
     public RegistroEntradaBoleto setVlBonificacao(final String vlBonificacao) {
         this.vlBonificacao = vlBonificacao;
         return this;
@@ -340,8 +346,8 @@ public class RegistroEntradaBoleto {
         return this;
     }
 
-    public RegistroEntradaBoleto setVlIOF(final String vlIOF) {
-        this.VlIOF = vlIOF;
+    public RegistroEntradaBoleto setvlIOF(final String vlIOF) {
+        this.vlIOF = vlIOF;
         return this;
     }
 
@@ -447,8 +453,8 @@ public class RegistroEntradaBoleto {
         return this;
     }
 
-    public RegistroEntradaBoleto setNuIndCpfcnpjSacadorAvalista(final String nuIndCpfcnpjSacadorAvalista) {
-        this.nuIndCpfcnpjSacadorAvalista = nuIndCpfcnpjSacadorAvalista;
+    public RegistroEntradaBoleto setNuCpfcnpjSacadorAvalista(final String nuCpfcnpjSacadorAvalista) {
+        this.nuCpfcnpjSacadorAvalista = nuCpfcnpjSacadorAvalista;
         return this;
     }
 
@@ -461,8 +467,8 @@ public class RegistroEntradaBoleto {
         return this.nuCPFCNPJ;
     }
 
-    public String getFilialCPFCPNJ() {
-        return this.filialCPFCPNJ;
+    public String getFilialCPFCNPJ() {
+        return this.filialCPFCNPJ;
     }
 
     public String getCtrlCPFCNPJ() {
@@ -621,6 +627,10 @@ public class RegistroEntradaBoleto {
         return this.prazoBonificacao;
     }
 
+    public String getPercentualBonificacao() {
+        return this.percentualBonificacao;
+    }
+
     public String getVlBonificacao() {
         return this.vlBonificacao;
     }
@@ -633,8 +643,8 @@ public class RegistroEntradaBoleto {
         return this.vlAbatimento;
     }
 
-    public String getVlIOF() {
-        return this.VlIOF;
+    public String getvlIOF() {
+        return this.vlIOF;
     }
 
     public String getNomePagador() {
@@ -725,8 +735,8 @@ public class RegistroEntradaBoleto {
         return this.cdIndCpfcnpjSacadorAvalista;
     }
 
-    public String getNuIndCpfcnpjSacadorAvalista() {
-        return this.nuIndCpfcnpjSacadorAvalista;
+    public String getNuCpfcnpjSacadorAvalista() {
+        return this.nuCpfcnpjSacadorAvalista;
     }
 
     public String getEndEletronicoSacadorAvalista() {

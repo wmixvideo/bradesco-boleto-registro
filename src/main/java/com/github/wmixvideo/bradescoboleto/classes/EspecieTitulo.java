@@ -53,10 +53,10 @@ public enum EspecieTitulo {
         return this.sigla;
     }
 
-    public static EspecieTitulo valueOfCodigo(final String codigo) {
-        for (final EspecieTitulo ambiente : EspecieTitulo.values()) {
-            if (ambiente.getCodigo().equalsIgnoreCase(codigo)) {
-                return ambiente;
+    public static EspecieTitulo valueOfSigla(final String sigla) {
+        for (final EspecieTitulo especie : EspecieTitulo.values()) {
+            if (especie.getSigla().equalsIgnoreCase(sigla)) {
+                return especie;
             }
         }
         return null;

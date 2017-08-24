@@ -2,6 +2,7 @@ package com.github.wmixvideo.bradescoboleto;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
@@ -32,7 +33,7 @@ public abstract class BBRUtil {
 
     public static String formataString(final String valor, final int tamanhoMaximo, final boolean truncar, final String info, final boolean obrigatorio) {
         BBRUtil.validaObrigatorio(obrigatorio, valor, info);
-        return valor != null ? BBRUtil.validaTamanhoMaximo(valor, tamanhoMaximo, info, truncar) : "";
+        return valor != null ? BBRUtil.validaTamanhoMaximo(BBRUtil.removeAcentuacao(valor), tamanhoMaximo, info, truncar) : "";
     }
 
     private static String validaTamanhoMaximo(final String string, final int tamanhoMaximo, final String info, final boolean truncar) {
@@ -53,5 +54,12 @@ public abstract class BBRUtil {
                 throw new IllegalArgumentException(String.format("%s nao pode ser nulo!", info));
             }
         }
+    }
+
+    public static String removeAcentuacao(final String texto) {
+        if (!texto.trim().isEmpty()) {
+            return Normalizer.normalize(texto, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+        }
+        return texto;
     }
 }
