@@ -393,7 +393,7 @@ public class RegistroEntradaBoleto {
     }
 
     public RegistroEntradaBoleto setNuCpfcnpjPagador(final String nuCpfcnpjPagador) {
-        this.nuCpfcnpjPagador = this.nuCPFCNPJ.length() == 14 ? nuCpfcnpjPagador : String.format("000%s", nuCpfcnpjPagador);
+        this.nuCpfcnpjPagador = nuCpfcnpjPagador.length() == 14 ? nuCpfcnpjPagador : String.format("000%s", nuCpfcnpjPagador);
         this.cdIndCpfcnpjPagador = nuCpfcnpjPagador.length() == 14 ? "2" : "1";
         return this;
     }
