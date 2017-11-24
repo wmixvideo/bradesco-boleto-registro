@@ -4,6 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -28,7 +29,10 @@ public class WSRegistroBoleto implements BBRLoggable {
         final String dadoEntradaAssinadoBase64 = this.geraArquivoAssinadoBase64(config, dadosEntradaJson);
         this.getLogger().debug("Dados assinados para registro: {}", dadoEntradaAssinadoBase64);
 
-        final SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(new BBRSocketFactory(config).getContext());
+        final BBRSocketFactory bbrSocketFactory = new BBRSocketFactory(config);
+        Protocol.registerProtocol("https", new Protocol("https", bbrSocketFactory, 443));
+
+        final SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(bbrSocketFactory.getContext());
         try (final CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build()) {
             final HttpPost request = new HttpPost(config.getAmbiente().getUrl());
             request.setHeader("Content-Type", "application/pkcs7-signature");
@@ -41,9 +45,13 @@ public class WSRegistroBoleto implements BBRLoggable {
             final Matcher m = Pattern.compile("<return>(.+?)</return>", Pattern.CASE_INSENSITIVE).matcher(stringResposta);
             final String respostaJson = m.find() ? m.group(1) : "";
             this.getLogger().debug("Resposta json: {}", respostaJson);
-            final String respostaJsonLimpa = respostaJson.substring(respostaJson.lastIndexOf(",") + 1).trim().equals("}") ? respostaJson.substring(0, respostaJson.lastIndexOf(",")) + "}" : respostaJson;
-            return new Gson().fromJson(respostaJsonLimpa, RegistroRetornoBoleto.class);
+            return WSRegistroBoleto.converterJsonToRegistroRetorno(respostaJson);
         }
+    }
+
+    static RegistroRetornoBoleto converterJsonToRegistroRetorno(final String respostaJson) {
+        final String respostaJsonLimpa = respostaJson.substring(respostaJson.lastIndexOf(",") + 1).trim().equals("}") ? respostaJson.substring(0, respostaJson.lastIndexOf(",")) + "}" : respostaJson;
+        return new Gson().fromJson(respostaJsonLimpa, RegistroRetornoBoleto.class);
     }
 
     public String geraArquivoAssinadoBase64(final BBRConfig config, final String dadosEntradaJson) throws Exception {
