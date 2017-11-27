@@ -4,7 +4,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -30,7 +29,7 @@ public class WSRegistroBoleto implements BBRLoggable {
         this.getLogger().debug("Dados assinados para registro: {}", dadoEntradaAssinadoBase64);
 
         final BBRSocketFactory bbrSocketFactory = new BBRSocketFactory(config);
-        Protocol.registerProtocol("https", new Protocol("https", bbrSocketFactory, 443));
+        // Protocol.registerProtocol("https", new Protocol("https", bbrSocketFactory, 443));
 
         final SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(bbrSocketFactory.getContext());
         try (final CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build()) {
