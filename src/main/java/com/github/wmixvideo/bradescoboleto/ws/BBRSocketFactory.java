@@ -1,8 +1,6 @@
 package com.github.wmixvideo.bradescoboleto.ws;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.security.*;
 import java.security.cert.CertificateException;
@@ -10,42 +8,18 @@ import java.security.cert.X509Certificate;
 
 import javax.net.ssl.*;
 
-import org.apache.commons.httpclient.params.HttpConnectionParams;
-import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
-
 import com.github.wmixvideo.bradescoboleto.BBRConfig;
 
-class BBRSocketFactory implements ProtocolSocketFactory {
+class BBRSocketFactory {
 
     private final SSLContext context;
-    private final BBRConfig config;
 
     BBRSocketFactory(final BBRConfig config) throws CertificateException, UnrecoverableKeyException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException, IOException {
-        this.config = config;
         this.context = BBRSocketFactory.createSSLContext(config);
     }
 
     public SSLContext getContext() {
         return this.context;
-    }
-
-    @Override
-    public Socket createSocket(final String host, final int port, final InetAddress localAddress, final int localPort, final HttpConnectionParams params) throws IOException {
-        final Socket socket = this.context.getSocketFactory().createSocket();
-        ((SSLSocket) socket).setEnabledProtocols(new String[] { this.config.getSSLProtocolo() });
-        socket.bind(new InetSocketAddress(localAddress, localPort));
-        socket.connect(new InetSocketAddress(host, port), 60000);
-        return socket;
-    }
-
-    @Override
-    public Socket createSocket(final String host, final int port, final InetAddress clientHost, final int clientPort) throws IOException {
-        return this.context.getSocketFactory().createSocket(host, port, clientHost, clientPort);
-    }
-
-    @Override
-    public Socket createSocket(final String host, final int port) throws IOException {
-        return this.context.getSocketFactory().createSocket(host, port);
     }
 
     private static SSLContext createSSLContext(final BBRConfig config) throws UnrecoverableKeyException, CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, KeyManagementException {
@@ -64,9 +38,25 @@ class BBRSocketFactory implements ProtocolSocketFactory {
     }
 
     private static TrustManager[] createTrustManagers(final BBRConfig config) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
-        final TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-        trustManagerFactory.init(config.getCadeiaCertificadosKeyStore());
-        return trustManagerFactory.getTrustManagers();
+        return new TrustManager[] { new X509TrustManager() {
+
+            @Override
+            public void checkClientTrusted(final X509Certificate[] arg0, final String arg1) throws CertificateException {
+            }
+
+            @Override
+            public void checkServerTrusted(final X509Certificate[] arg0, final String arg1) throws CertificateException {
+            }
+
+            @Override
+            public X509Certificate[] getAcceptedIssuers() {
+                return null;
+            }
+
+        } };
+        // final TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+        // trustManagerFactory.init(config.getCadeiaCertificadosKeyStore());
+        // return trustManagerFactory.getTrustManagers();
     }
 
     private static class BBRKeyManager implements X509KeyManager {

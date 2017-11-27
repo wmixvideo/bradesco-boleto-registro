@@ -28,10 +28,7 @@ public class WSRegistroBoleto implements BBRLoggable {
         final String dadoEntradaAssinadoBase64 = this.geraArquivoAssinadoBase64(config, dadosEntradaJson);
         this.getLogger().debug("Dados assinados para registro: {}", dadoEntradaAssinadoBase64);
 
-        final BBRSocketFactory bbrSocketFactory = new BBRSocketFactory(config);
-        // Protocol.registerProtocol("https", new Protocol("https", bbrSocketFactory, 443));
-
-        final SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(bbrSocketFactory.getContext());
+        final SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(new BBRSocketFactory(config).getContext());
         try (final CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build()) {
             final HttpPost request = new HttpPost(config.getAmbiente().getUrl());
             request.setHeader("Content-Type", "application/pkcs7-signature");
@@ -55,7 +52,7 @@ public class WSRegistroBoleto implements BBRLoggable {
 
     public String geraArquivoAssinadoBase64(final BBRConfig config, final String dadosEntradaJson) throws Exception {
         final CMSSignedDataGenerator signatureGenerator = AssinaturaPKCS7.setUpProvider(config.getCertificadoKeyStore(), config.getCertificadoSenha().toCharArray());
-        final byte[] signedBytes = AssinaturaPKCS7.signPkcs7(dadosEntradaJson.getBytes("UTF-8"), signatureGenerator);
+        final byte[] signedBytes = AssinaturaPKCS7.signPkcs7(signatureGenerator, dadosEntradaJson.getBytes("UTF-8"));
         return new String(org.bouncycastle.util.encoders.Base64.encode(signedBytes));
     }
 }
