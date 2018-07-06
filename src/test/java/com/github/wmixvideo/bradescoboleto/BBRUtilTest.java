@@ -38,6 +38,11 @@ public class BBRUtilTest {
         Assert.assertEquals("", BBRUtil.formataValor(null, true, "Teste Valor"));
     }
 
+   @Test(expected = IllegalArgumentException.class)
+    public void formataValorObrigatoriaComTextoInvalido() {
+        Assert.assertEquals("", BBRUtil.formataString("'(", 15,true, "Teste Valor",true));
+    }
+
     @Test
     public void formataValorNaoObrigatoriaNula() {
         Assert.assertEquals("0", BBRUtil.formataValor(null, false, "Teste Valor"));
@@ -74,6 +79,26 @@ public class BBRUtilTest {
     @Test
     public void formataTextoNaoObrigatoriaNula() {
         Assert.assertEquals("", BBRUtil.formataString(null, 0, true, "Teste Texto", false));
+    }
+
+
+    @Test
+    public void formataTextoRemoveAcentuacao(){
+        Assert.assertEquals("aaaaaeeeeiiiioooouuuuncyrsnpwgnmuxzh",BBRUtil.removeAcentuacao("àáäâãèéëêìíïîòóöôùúüûñçÿŕśńṕẃǵǹḿǘẍźḧ"));
+    }
+
+    @Test
+    public void formataTextoRemoveCaracteresEspeciais(){
+        Assert.assertEquals("dagua", BBRUtil.removeCaracteresEspeciais("d'agua"));
+        Assert.assertEquals("Endereco complementar", BBRUtil.removeCaracteresEspeciais("Endereco (complementar)"));
+    }
+
+    @Test
+    public void formataTextoLimiteMaximo() {
+        Assert.assertEquals("012345678901234", BBRUtil.formataString("01234567890123456789", 15, true, "Teste limite maximo", false));
+        Assert.assertEquals("TESTE", BBRUtil.formataString("TESTE", 15, true, "Teste limite maximo", false));
+        Assert.assertEquals("Acentuacao", BBRUtil.formataString("Acentuação", 15, true, "Teste limite maximo", false));
+        Assert.assertEquals("012345678901234", BBRUtil.formataString("012345678901234'", 15, true, "Teste limite maximo", false));
     }
 
 }
