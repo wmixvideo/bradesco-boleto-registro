@@ -6,7 +6,12 @@ import java.security.*;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
-import javax.net.ssl.*;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509KeyManager;
+
+import org.apache.commons.net.util.TrustManagerUtils;
 
 import com.github.wmixvideo.bradescoboleto.BBRConfig;
 
@@ -24,7 +29,7 @@ class BBRSocketFactory {
 
     private static SSLContext createSSLContext(final BBRConfig config) throws UnrecoverableKeyException, CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, KeyManagementException {
         final KeyManager[] keyManagers = BBRSocketFactory.createKeyManagers(config);
-        final TrustManager[] trustManagers = BBRSocketFactory.createTrustManagers(config);
+        final TrustManager[] trustManagers = new TrustManager[] { TrustManagerUtils.getAcceptAllTrustManager() };
         final SSLContext sslContext = SSLContext.getInstance(config.getSSLProtocolo());
         sslContext.init(keyManagers, trustManagers, null);
         return sslContext;
@@ -35,28 +40,6 @@ class BBRSocketFactory {
         final X509Certificate certificate = (X509Certificate) config.getCertificadoKeyStore().getCertificate(alias);
         final PrivateKey privateKey = (PrivateKey) config.getCertificadoKeyStore().getKey(alias, config.getCertificadoSenha().toCharArray());
         return new KeyManager[] { new BBRKeyManager(certificate, privateKey) };
-    }
-
-    private static TrustManager[] createTrustManagers(final BBRConfig config) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
-        return new TrustManager[] { new X509TrustManager() {
-
-            @Override
-            public void checkClientTrusted(final X509Certificate[] arg0, final String arg1) throws CertificateException {
-            }
-
-            @Override
-            public void checkServerTrusted(final X509Certificate[] arg0, final String arg1) throws CertificateException {
-            }
-
-            @Override
-            public X509Certificate[] getAcceptedIssuers() {
-                return null;
-            }
-
-        } };
-        // final TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-        // trustManagerFactory.init(config.getCadeiaCertificadosKeyStore());
-        // return trustManagerFactory.getTrustManagers();
     }
 
     private static class BBRKeyManager implements X509KeyManager {

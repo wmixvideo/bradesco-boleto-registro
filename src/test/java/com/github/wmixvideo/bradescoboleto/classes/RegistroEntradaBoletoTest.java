@@ -32,19 +32,21 @@ public class RegistroEntradaBoletoTest {
         Assert.assertEquals("12", registro.getCtrlCPFCNPJ());
     }
 
+    @Test
     public void testCepPagador() {
         final RegistroEntradaBoleto registro = new RegistroEntradaBoleto().setCepPagador("88101250");
         Assert.assertEquals("88101", registro.getCepPagador());
         Assert.assertEquals("250", registro.getComplementoCepPagador());
     }
 
+    @Test
     public void testCpfcnpjPagador() {
         final RegistroEntradaBoleto registro = new RegistroEntradaBoleto().setNuCpfcnpjPagador("12345678912");
         Assert.assertEquals("00012345678912", registro.getNuCpfcnpjPagador());
-        Assert.assertEquals("2", registro.getCdIndCpfcnpjPagador());
+        Assert.assertEquals("1", registro.getCdIndCpfcnpjPagador());
         final RegistroEntradaBoleto registro2 = new RegistroEntradaBoleto().setNuCpfcnpjPagador("12312345678912");
         Assert.assertEquals("12312345678912", registro2.getNuCpfcnpjPagador());
-        Assert.assertEquals("1", registro2.getCdIndCpfcnpjPagador());
+        Assert.assertEquals("2", registro2.getCdIndCpfcnpjPagador());
     }
 
 }
