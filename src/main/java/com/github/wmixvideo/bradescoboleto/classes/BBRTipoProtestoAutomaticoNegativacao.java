@@ -1,6 +1,6 @@
 package com.github.wmixvideo.bradescoboleto.classes;
 
-public enum TipoProtestoAutomaticoNegativacao {
+public enum BBRTipoProtestoAutomaticoNegativacao {
 
     DIAS_CORRIDOS_PARA_PROTESTO("01"),
     DIAS_UTEIS_PARA_PROTESTO("02"),
@@ -8,7 +8,7 @@ public enum TipoProtestoAutomaticoNegativacao {
 
     private final String codigo;
 
-    TipoProtestoAutomaticoNegativacao(final String codigo) {
+    BBRTipoProtestoAutomaticoNegativacao(final String codigo) {
         this.codigo = codigo;
     }
 
@@ -16,8 +16,8 @@ public enum TipoProtestoAutomaticoNegativacao {
         return this.codigo;
     }
 
-    public static TipoProtestoAutomaticoNegativacao valueOfCodigo(final String codigo) {
-        for (final TipoProtestoAutomaticoNegativacao tipo : TipoProtestoAutomaticoNegativacao.values()) {
+    public static BBRTipoProtestoAutomaticoNegativacao valueOfCodigo(final String codigo) {
+        for (final BBRTipoProtestoAutomaticoNegativacao tipo : BBRTipoProtestoAutomaticoNegativacao.values()) {
             if (tipo.getCodigo().equalsIgnoreCase(codigo)) {
                 return tipo;
             }

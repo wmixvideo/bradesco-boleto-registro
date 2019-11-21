@@ -1,6 +1,6 @@
 package com.github.wmixvideo.bradescoboleto.classes;
 
-public enum RegistroBoletoStatus {
+public enum BBRRegistroBoletoStatus {
 
     SERVICO_INDISPONIVEL("-99", "Servi\u00e7o indispon\u00edvel no momento. Tente novamente mais tarde", false),
     TAMANHO_INVALIDO("-4", "Tamanho do campo inv\u00e1lido", false),
@@ -106,7 +106,7 @@ public enum RegistroBoletoStatus {
     private final String descricao;
     private final boolean statusOk;
 
-    RegistroBoletoStatus(final String codigo, final String descricao, final boolean statusOk) {
+    BBRRegistroBoletoStatus(final String codigo, final String descricao, final boolean statusOk) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.statusOk = statusOk;
@@ -120,8 +120,8 @@ public enum RegistroBoletoStatus {
         return this.statusOk;
     }
 
-    public static RegistroBoletoStatus valueOfCodigo(final String codigo) {
-        for (final RegistroBoletoStatus ambiente : RegistroBoletoStatus.values()) {
+    public static BBRRegistroBoletoStatus valueOfCodigo(final String codigo) {
+        for (final BBRRegistroBoletoStatus ambiente : BBRRegistroBoletoStatus.values()) {
             if (ambiente.getCodigo().equalsIgnoreCase(codigo)) {
                 return ambiente;
             }

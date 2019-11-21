@@ -1,6 +1,6 @@
 package com.github.wmixvideo.bradescoboleto.classes;
 
-public class RegistroEntradaBoleto {
+public class BBRRegistroEntradaBoleto {
 
     private String nuCPFCNPJ;
     private String filialCPFCNPJ;
@@ -73,7 +73,7 @@ public class RegistroEntradaBoleto {
     private String nuCpfcnpjSacadorAvalista;
     private String endEletronicoSacadorAvalista;
 
-    public RegistroEntradaBoleto() {
+    public BBRRegistroEntradaBoleto() {
         this.preencherCampos();
     }
 
@@ -150,179 +150,179 @@ public class RegistroEntradaBoleto {
         this.endEletronicoSacadorAvalista = "";
     }
 
-    public RegistroEntradaBoleto setNuCPFCNPJ(final String nuCPFCNPJ) {
+    public BBRRegistroEntradaBoleto setNuCPFCNPJ(final String nuCPFCNPJ) {
         this.nuCPFCNPJ = nuCPFCNPJ.length() == 14 ? String.format("0%s", nuCPFCNPJ.substring(0, 8)) : nuCPFCNPJ.substring(0, 9);
         this.filialCPFCNPJ = nuCPFCNPJ.length() == 14 ? nuCPFCNPJ.substring(8, 12) : "0";
         this.ctrlCPFCNPJ = nuCPFCNPJ.substring(nuCPFCNPJ.length() - 2, nuCPFCNPJ.length());
         return this;
     }
 
-    public RegistroEntradaBoleto setNuSequenciaContrato(final String nuSequenciaContrato) {
+    public BBRRegistroEntradaBoleto setNuSequenciaContrato(final String nuSequenciaContrato) {
         this.nuSequenciaContrato = nuSequenciaContrato;
         return this;
     }
 
-    public RegistroEntradaBoleto setIdProduto(final String idProduto) {
+    public BBRRegistroEntradaBoleto setIdProduto(final String idProduto) {
         this.idProduto = idProduto;
         return this;
     }
 
-    public RegistroEntradaBoleto setNuNegociacao(final String nuNegociacao) {
+    public BBRRegistroEntradaBoleto setNuNegociacao(final String nuNegociacao) {
         this.nuNegociacao = nuNegociacao;
         return this;
     }
 
-    public RegistroEntradaBoleto setCdBanco(final String cdBanco) {
+    public BBRRegistroEntradaBoleto setCdBanco(final String cdBanco) {
         this.cdBanco = cdBanco;
         return this;
     }
 
-    public RegistroEntradaBoleto seteNuSequenciaContrato(final String eNuSequenciaContrato) {
+    public BBRRegistroEntradaBoleto seteNuSequenciaContrato(final String eNuSequenciaContrato) {
         this.eNuSequenciaContrato = eNuSequenciaContrato;
         return this;
     }
 
-    public RegistroEntradaBoleto setTpRegistro(final String tpRegistro) {
+    public BBRRegistroEntradaBoleto setTpRegistro(final String tpRegistro) {
         this.tpRegistro = tpRegistro;
         return this;
     }
 
-    public RegistroEntradaBoleto setCdProduto(final String cdProduto) {
+    public BBRRegistroEntradaBoleto setCdProduto(final String cdProduto) {
         this.cdProduto = cdProduto;
         return this;
     }
 
-    public RegistroEntradaBoleto setNuTitulo(final String nuTitulo) {
+    public BBRRegistroEntradaBoleto setNuTitulo(final String nuTitulo) {
         this.nuTitulo = nuTitulo;
         return this;
     }
 
-    public RegistroEntradaBoleto setNuCliente(final String nuCliente) {
+    public BBRRegistroEntradaBoleto setNuCliente(final String nuCliente) {
         this.nuCliente = nuCliente;
         return this;
     }
 
-    public RegistroEntradaBoleto setDtEmissaoTitulo(final String dtEmissaoTitulo) {
+    public BBRRegistroEntradaBoleto setDtEmissaoTitulo(final String dtEmissaoTitulo) {
         this.dtEmissaoTitulo = dtEmissaoTitulo;
         return this;
     }
 
-    public RegistroEntradaBoleto setDtVencimentoTitulo(final String dtVencimentoTitulo) {
+    public BBRRegistroEntradaBoleto setDtVencimentoTitulo(final String dtVencimentoTitulo) {
         this.dtVencimentoTitulo = dtVencimentoTitulo;
         return this;
     }
 
-    public RegistroEntradaBoleto setVlNominalTitulo(final String vlNominalTitulo) {
+    public BBRRegistroEntradaBoleto setVlNominalTitulo(final String vlNominalTitulo) {
         this.vlNominalTitulo = vlNominalTitulo;
         return this;
     }
 
-    public RegistroEntradaBoleto setCdEspecieTitulo(final String cdEspecieTitulo) {
+    public BBRRegistroEntradaBoleto setCdEspecieTitulo(final String cdEspecieTitulo) {
         this.cdEspecieTitulo = cdEspecieTitulo;
         return this;
     }
 
-    public RegistroEntradaBoleto setTpProtestoAutomaticoNegativacao(final String tpProtestoAutomaticoNegativacao) {
+    public BBRRegistroEntradaBoleto setTpProtestoAutomaticoNegativacao(final String tpProtestoAutomaticoNegativacao) {
         this.tpProtestoAutomaticoNegativacao = tpProtestoAutomaticoNegativacao;
         return this;
     }
 
-    public RegistroEntradaBoleto setPrazoProtestoAutomaticoNegativacao(final String prazoProtestoAutomaticoNegativacao) {
+    public BBRRegistroEntradaBoleto setPrazoProtestoAutomaticoNegativacao(final String prazoProtestoAutomaticoNegativacao) {
         this.prazoProtestoAutomaticoNegativacao = prazoProtestoAutomaticoNegativacao;
         return this;
     }
 
-    public RegistroEntradaBoleto setControleParticipante(final String controleParticipante) {
+    public BBRRegistroEntradaBoleto setControleParticipante(final String controleParticipante) {
         this.controleParticipante = controleParticipante;
         return this;
     }
 
-    public RegistroEntradaBoleto setCdPagamentoParcial(final String cdPagamentoParcial) {
+    public BBRRegistroEntradaBoleto setCdPagamentoParcial(final String cdPagamentoParcial) {
         this.cdPagamentoParcial = cdPagamentoParcial;
         return this;
     }
 
-    public RegistroEntradaBoleto setQtdePagamentoParcial(final String qtdePagamentoParcial) {
+    public BBRRegistroEntradaBoleto setQtdePagamentoParcial(final String qtdePagamentoParcial) {
         this.qtdePagamentoParcial = qtdePagamentoParcial;
         return this;
     }
 
-    public RegistroEntradaBoleto setPercentualJuros(final String percentualJuros) {
+    public BBRRegistroEntradaBoleto setPercentualJuros(final String percentualJuros) {
         this.percentualJuros = percentualJuros;
         return this;
     }
 
-    public RegistroEntradaBoleto setVlJuros(final String vlJuros) {
+    public BBRRegistroEntradaBoleto setVlJuros(final String vlJuros) {
         this.vlJuros = vlJuros;
         return this;
     }
 
-    public RegistroEntradaBoleto setQtdeDiasJuros(final String qtdeDiasJuros) {
+    public BBRRegistroEntradaBoleto setQtdeDiasJuros(final String qtdeDiasJuros) {
         this.qtdeDiasJuros = qtdeDiasJuros;
         return this;
     }
 
-    public RegistroEntradaBoleto setPercentualMulta(final String percentualMulta) {
+    public BBRRegistroEntradaBoleto setPercentualMulta(final String percentualMulta) {
         this.percentualMulta = percentualMulta;
         return this;
     }
 
-    public RegistroEntradaBoleto setVlMulta(final String vlMulta) {
+    public BBRRegistroEntradaBoleto setVlMulta(final String vlMulta) {
         this.vlMulta = vlMulta;
         return this;
     }
 
-    public RegistroEntradaBoleto setQtdeDiasMulta(final String qtdeDiasMulta) {
+    public BBRRegistroEntradaBoleto setQtdeDiasMulta(final String qtdeDiasMulta) {
         this.qtdeDiasMulta = qtdeDiasMulta;
         return this;
     }
 
-    public RegistroEntradaBoleto setPercentualDesconto1(final String percentualDesconto1) {
+    public BBRRegistroEntradaBoleto setPercentualDesconto1(final String percentualDesconto1) {
         this.percentualDesconto1 = percentualDesconto1;
         return this;
     }
 
-    public RegistroEntradaBoleto setVlDesconto1(final String vlDesconto1) {
+    public BBRRegistroEntradaBoleto setVlDesconto1(final String vlDesconto1) {
         this.vlDesconto1 = vlDesconto1;
         return this;
     }
 
-    public RegistroEntradaBoleto setDataLimiteDesconto1(final String dataLimiteDesconto1) {
+    public BBRRegistroEntradaBoleto setDataLimiteDesconto1(final String dataLimiteDesconto1) {
         this.dataLimiteDesconto1 = dataLimiteDesconto1;
         return this;
     }
 
-    public RegistroEntradaBoleto setPercentualDesconto2(final String percentualDesconto2) {
+    public BBRRegistroEntradaBoleto setPercentualDesconto2(final String percentualDesconto2) {
         this.percentualDesconto2 = percentualDesconto2;
         return this;
     }
 
-    public RegistroEntradaBoleto setVlDesconto2(final String vlDesconto2) {
+    public BBRRegistroEntradaBoleto setVlDesconto2(final String vlDesconto2) {
         this.vlDesconto2 = vlDesconto2;
         return this;
     }
 
-    public RegistroEntradaBoleto setDataLimiteDesconto2(final String dataLimiteDesconto2) {
+    public BBRRegistroEntradaBoleto setDataLimiteDesconto2(final String dataLimiteDesconto2) {
         this.dataLimiteDesconto2 = dataLimiteDesconto2;
         return this;
     }
 
-    public RegistroEntradaBoleto setPercentualDesconto3(final String percentualDesconto3) {
+    public BBRRegistroEntradaBoleto setPercentualDesconto3(final String percentualDesconto3) {
         this.percentualDesconto3 = percentualDesconto3;
         return this;
     }
 
-    public RegistroEntradaBoleto setVlDesconto3(final String vlDesconto3) {
+    public BBRRegistroEntradaBoleto setVlDesconto3(final String vlDesconto3) {
         this.vlDesconto3 = vlDesconto3;
         return this;
     }
 
-    public RegistroEntradaBoleto setDataLimiteDesconto3(final String dataLimiteDesconto3) {
+    public BBRRegistroEntradaBoleto setDataLimiteDesconto3(final String dataLimiteDesconto3) {
         this.dataLimiteDesconto3 = dataLimiteDesconto3;
         return this;
     }
 
-    public RegistroEntradaBoleto setPrazoBonificacao(final String prazoBonificacao) {
+    public BBRRegistroEntradaBoleto setPrazoBonificacao(final String prazoBonificacao) {
         this.prazoBonificacao = prazoBonificacao;
         return this;
     }
@@ -331,134 +331,134 @@ public class RegistroEntradaBoleto {
         this.percentualBonificacao = percentualBonificacao;
     }
 
-    public RegistroEntradaBoleto setVlBonificacao(final String vlBonificacao) {
+    public BBRRegistroEntradaBoleto setVlBonificacao(final String vlBonificacao) {
         this.vlBonificacao = vlBonificacao;
         return this;
     }
 
-    public RegistroEntradaBoleto setDtLimiteBonificacao(final String dtLimiteBonificacao) {
+    public BBRRegistroEntradaBoleto setDtLimiteBonificacao(final String dtLimiteBonificacao) {
         this.dtLimiteBonificacao = dtLimiteBonificacao;
         return this;
     }
 
-    public RegistroEntradaBoleto setVlAbatimento(final String vlAbatimento) {
+    public BBRRegistroEntradaBoleto setVlAbatimento(final String vlAbatimento) {
         this.vlAbatimento = vlAbatimento;
         return this;
     }
 
-    public RegistroEntradaBoleto setvlIOF(final String vlIOF) {
+    public BBRRegistroEntradaBoleto setvlIOF(final String vlIOF) {
         this.vlIOF = vlIOF;
         return this;
     }
 
-    public RegistroEntradaBoleto setNomePagador(final String nomePagador) {
+    public BBRRegistroEntradaBoleto setNomePagador(final String nomePagador) {
         this.nomePagador = nomePagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setLogradouroPagador(final String logradouroPagador) {
+    public BBRRegistroEntradaBoleto setLogradouroPagador(final String logradouroPagador) {
         this.logradouroPagador = logradouroPagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setNuLogradouroPagador(final String nuLogradouroPagador) {
+    public BBRRegistroEntradaBoleto setNuLogradouroPagador(final String nuLogradouroPagador) {
         this.nuLogradouroPagador = nuLogradouroPagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setComplementoLogradouroPagador(final String complementoLogradouroPagador) {
+    public BBRRegistroEntradaBoleto setComplementoLogradouroPagador(final String complementoLogradouroPagador) {
         this.complementoLogradouroPagador = complementoLogradouroPagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setCepPagador(final String cepPagador) {
+    public BBRRegistroEntradaBoleto setCepPagador(final String cepPagador) {
         this.cepPagador = cepPagador.substring(0, 5);
         this.complementoCepPagador = cepPagador.substring(5, 8);
         return this;
     }
 
-    public RegistroEntradaBoleto setBairroPagador(final String bairroPagador) {
+    public BBRRegistroEntradaBoleto setBairroPagador(final String bairroPagador) {
         this.bairroPagador = bairroPagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setMunicipioPagador(final String municipioPagador) {
+    public BBRRegistroEntradaBoleto setMunicipioPagador(final String municipioPagador) {
         this.municipioPagador = municipioPagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setUfPagador(final String ufPagador) {
+    public BBRRegistroEntradaBoleto setUfPagador(final String ufPagador) {
         this.ufPagador = ufPagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setNuCpfcnpjPagador(final String nuCpfcnpjPagador) {
+    public BBRRegistroEntradaBoleto setNuCpfcnpjPagador(final String nuCpfcnpjPagador) {
         this.nuCpfcnpjPagador = nuCpfcnpjPagador.length() == 14 ? nuCpfcnpjPagador : String.format("000%s", nuCpfcnpjPagador);
         this.cdIndCpfcnpjPagador = nuCpfcnpjPagador.length() == 14 ? "2" : "1";
         return this;
     }
 
-    public RegistroEntradaBoleto setEndEletronicoPagador(final String endEletronicoPagador) {
+    public BBRRegistroEntradaBoleto setEndEletronicoPagador(final String endEletronicoPagador) {
         this.endEletronicoPagador = endEletronicoPagador;
         return this;
     }
 
-    public RegistroEntradaBoleto setNomeSacadorAvalista(final String nomeSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setNomeSacadorAvalista(final String nomeSacadorAvalista) {
         this.nomeSacadorAvalista = nomeSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setLogradouroSacadorAvalista(final String logradouroSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setLogradouroSacadorAvalista(final String logradouroSacadorAvalista) {
         this.logradouroSacadorAvalista = logradouroSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setNuLogradouroSacadorAvalista(final String nuLogradouroSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setNuLogradouroSacadorAvalista(final String nuLogradouroSacadorAvalista) {
         this.nuLogradouroSacadorAvalista = nuLogradouroSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setComplementoLogradouroSacadorAvalista(final String complementoLogradouroSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setComplementoLogradouroSacadorAvalista(final String complementoLogradouroSacadorAvalista) {
         this.complementoLogradouroSacadorAvalista = complementoLogradouroSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setCepSacadorAvalista(final String cepSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setCepSacadorAvalista(final String cepSacadorAvalista) {
         this.cepSacadorAvalista = cepSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setComplementoCepSacadorAvalista(final String complementoCepSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setComplementoCepSacadorAvalista(final String complementoCepSacadorAvalista) {
         this.complementoCepSacadorAvalista = complementoCepSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setBairroSacadorAvalista(final String bairroSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setBairroSacadorAvalista(final String bairroSacadorAvalista) {
         this.bairroSacadorAvalista = bairroSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setMunicipioSacadorAvalista(final String municipioSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setMunicipioSacadorAvalista(final String municipioSacadorAvalista) {
         this.municipioSacadorAvalista = municipioSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setUfSacadorAvalista(final String ufSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setUfSacadorAvalista(final String ufSacadorAvalista) {
         this.ufSacadorAvalista = ufSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setCdIndCpfcnpjSacadorAvalista(final String cdIndCpfcnpjSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setCdIndCpfcnpjSacadorAvalista(final String cdIndCpfcnpjSacadorAvalista) {
         this.cdIndCpfcnpjSacadorAvalista = cdIndCpfcnpjSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setNuCpfcnpjSacadorAvalista(final String nuCpfcnpjSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setNuCpfcnpjSacadorAvalista(final String nuCpfcnpjSacadorAvalista) {
         this.nuCpfcnpjSacadorAvalista = nuCpfcnpjSacadorAvalista;
         return this;
     }
 
-    public RegistroEntradaBoleto setEndEletronicoSacadorAvalista(final String endEletronicoSacadorAvalista) {
+    public BBRRegistroEntradaBoleto setEndEletronicoSacadorAvalista(final String endEletronicoSacadorAvalista) {
         this.endEletronicoSacadorAvalista = endEletronicoSacadorAvalista;
         return this;
     }

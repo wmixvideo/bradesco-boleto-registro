@@ -1,14 +1,5 @@
 package com.github.wmixvideo.bradescoboleto.ws;
 
-import java.security.KeyStore;
-import java.security.PrivateKey;
-import java.security.Security;
-import java.security.cert.Certificate;
-import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-
 import org.bouncycastle.cert.jcajce.JcaCertStore;
 import org.bouncycastle.cms.CMSProcessableByteArray;
 import org.bouncycastle.cms.CMSSignedDataGenerator;
@@ -18,10 +9,19 @@ import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder;
 
-public final class AssinaturaPKCS7 {
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.Security;
+import java.security.cert.Certificate;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
+final class BBRPKCS7 {
     private static final String SIGNATUREALGO = "Sha256WithRSA";
 
-    public static CMSSignedDataGenerator setUpProvider(final KeyStore keystore, final char[] senha) throws Exception {
+    static CMSSignedDataGenerator setUpProvider(final KeyStore keystore, final char[] senha) throws Exception {
         Security.addProvider(new BouncyCastleProvider());
         final Enumeration<String> aliases = keystore.aliases();
         String aliaz = "";
@@ -37,7 +37,7 @@ public final class AssinaturaPKCS7 {
             certlist.add(certchain[i]);
         }
         final Certificate cert = keystore.getCertificate(aliaz);
-        final ContentSigner signer = new JcaContentSignerBuilder(AssinaturaPKCS7.SIGNATUREALGO).setProvider("BC").build((PrivateKey) (keystore.getKey(aliaz, senha)));
+        final ContentSigner signer = new JcaContentSignerBuilder(BBRPKCS7.SIGNATUREALGO).setProvider("BC").build((PrivateKey) (keystore.getKey(aliaz, senha)));
         final CMSSignedDataGenerator generator = new CMSSignedDataGenerator();
         generator.addSignerInfoGenerator(new JcaSignerInfoGeneratorBuilder(new JcaDigestCalculatorProviderBuilder().setProvider("BC").build()).build(signer, (X509Certificate) cert));
         generator.addCertificates(new JcaCertStore(certlist));

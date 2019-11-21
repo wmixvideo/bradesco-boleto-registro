@@ -1,6 +1,6 @@
 package com.github.wmixvideo.bradescoboleto.classes;
 
-public class RegistroRetornoBoleto {
+public class BBRRegistroRetornoBoleto {
 
     private String cdErro;
     private String msgErro;
@@ -488,487 +488,487 @@ public class RegistroRetornoBoleto {
         return this.qtdePagamentoParciais;
     }
 
-    public RegistroRetornoBoleto setCdErro(final String cdErro) {
+    public BBRRegistroRetornoBoleto setCdErro(final String cdErro) {
         this.cdErro = cdErro;
         return this;
     }
 
-    public RegistroRetornoBoleto setMsgErro(final String msgErro) {
+    public BBRRegistroRetornoBoleto setMsgErro(final String msgErro) {
         this.msgErro = msgErro;
         return this;
     }
 
-    public RegistroRetornoBoleto setIdProduto(final String idProduto) {
+    public BBRRegistroRetornoBoleto setIdProduto(final String idProduto) {
         this.idProduto = idProduto;
         return this;
     }
 
-    public RegistroRetornoBoleto setNegociacao(final String negociacao) {
+    public BBRRegistroRetornoBoleto setNegociacao(final String negociacao) {
         this.negociacao = negociacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setClubBanco(final String clubBanco) {
+    public BBRRegistroRetornoBoleto setClubBanco(final String clubBanco) {
         this.clubBanco = clubBanco;
         return this;
     }
 
-    public RegistroRetornoBoleto setTpContrato(final String tpContrato) {
+    public BBRRegistroRetornoBoleto setTpContrato(final String tpContrato) {
         this.tpContrato = tpContrato;
         return this;
     }
 
-    public RegistroRetornoBoleto setNuSequenciaContrato(final String nuSequenciaContrato) {
+    public BBRRegistroRetornoBoleto setNuSequenciaContrato(final String nuSequenciaContrato) {
         this.nuSequenciaContrato = nuSequenciaContrato;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdProduto(final String cdProduto) {
+    public BBRRegistroRetornoBoleto setCdProduto(final String cdProduto) {
         this.cdProduto = cdProduto;
         return this;
     }
 
-    public RegistroRetornoBoleto setNuTituloGerado(final String nuTituloGerado) {
+    public BBRRegistroRetornoBoleto setNuTituloGerado(final String nuTituloGerado) {
         this.nuTituloGerado = nuTituloGerado;
         return this;
     }
 
-    public RegistroRetornoBoleto setAgenciaCreditoBeneficiario(final String agenciaCreditoBeneficiario) {
+    public BBRRegistroRetornoBoleto setAgenciaCreditoBeneficiario(final String agenciaCreditoBeneficiario) {
         this.agenciaCreditoBeneficiario = agenciaCreditoBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setContaCreditoBeneficiario(final String contaCreditoBeneficiario) {
+    public BBRRegistroRetornoBoleto setContaCreditoBeneficiario(final String contaCreditoBeneficiario) {
         this.contaCreditoBeneficiario = contaCreditoBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setDigCreditoBeneficiario(final String digCreditoBeneficiario) {
+    public BBRRegistroRetornoBoleto setDigCreditoBeneficiario(final String digCreditoBeneficiario) {
         this.digCreditoBeneficiario = digCreditoBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdCipTitulo(final String cdCipTitulo) {
+    public BBRRegistroRetornoBoleto setCdCipTitulo(final String cdCipTitulo) {
         this.cdCipTitulo = cdCipTitulo;
         return this;
     }
 
-    public RegistroRetornoBoleto setStatusTitulo(final String statusTitulo) {
+    public BBRRegistroRetornoBoleto setStatusTitulo(final String statusTitulo) {
         this.statusTitulo = statusTitulo;
         return this;
     }
 
-    public RegistroRetornoBoleto setDescStatusTitulo(final String descStatusTitulo) {
+    public BBRRegistroRetornoBoleto setDescStatusTitulo(final String descStatusTitulo) {
         this.descStatusTitulo = descStatusTitulo;
         return this;
     }
 
-    public RegistroRetornoBoleto setNomeBeneficiario(final String nomeBeneficiario) {
+    public BBRRegistroRetornoBoleto setNomeBeneficiario(final String nomeBeneficiario) {
         this.nomeBeneficiario = nomeBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setLogradouroBeneficiario(final String logradouroBeneficiario) {
+    public BBRRegistroRetornoBoleto setLogradouroBeneficiario(final String logradouroBeneficiario) {
         this.logradouroBeneficiario = logradouroBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setNuLogradouroBeneficiario(final String nuLogradouroBeneficiario) {
+    public BBRRegistroRetornoBoleto setNuLogradouroBeneficiario(final String nuLogradouroBeneficiario) {
         this.nuLogradouroBeneficiario = nuLogradouroBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setComplementoLogradouroBeneficiario(final String complementoLogradouroBeneficiario) {
+    public BBRRegistroRetornoBoleto setComplementoLogradouroBeneficiario(final String complementoLogradouroBeneficiario) {
         this.complementoLogradouroBeneficiario = complementoLogradouroBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setBairroBeneficiario(final String bairroBeneficiario) {
+    public BBRRegistroRetornoBoleto setBairroBeneficiario(final String bairroBeneficiario) {
         this.bairroBeneficiario = bairroBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setCepBeneficiario(final String cepBeneficiario) {
+    public BBRRegistroRetornoBoleto setCepBeneficiario(final String cepBeneficiario) {
         this.cepBeneficiario = cepBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setCepComplementoBeneficiario(final String cepComplementoBeneficiario) {
+    public BBRRegistroRetornoBoleto setCepComplementoBeneficiario(final String cepComplementoBeneficiario) {
         this.cepComplementoBeneficiario = cepComplementoBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setMunicipioBeneficiario(final String municipioBeneficiario) {
+    public BBRRegistroRetornoBoleto setMunicipioBeneficiario(final String municipioBeneficiario) {
         this.municipioBeneficiario = municipioBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setUfBeneficiario(final String ufBeneficiario) {
+    public BBRRegistroRetornoBoleto setUfBeneficiario(final String ufBeneficiario) {
         this.ufBeneficiario = ufBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setRazaoContaBeneficiario(final String razaoContaBeneficiario) {
+    public BBRRegistroRetornoBoleto setRazaoContaBeneficiario(final String razaoContaBeneficiario) {
         this.razaoContaBeneficiario = razaoContaBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setNomePagador(final String nomePagador) {
+    public BBRRegistroRetornoBoleto setNomePagador(final String nomePagador) {
         this.nomePagador = nomePagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setCpfcnpjPagador(final String cpfcnpjPagador) {
+    public BBRRegistroRetornoBoleto setCpfcnpjPagador(final String cpfcnpjPagador) {
         this.cpfcnpjPagador = cpfcnpjPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setEnderecoPagador(final String enderecoPagador) {
+    public BBRRegistroRetornoBoleto setEnderecoPagador(final String enderecoPagador) {
         this.enderecoPagador = enderecoPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setBairroPagador(final String bairroPagador) {
+    public BBRRegistroRetornoBoleto setBairroPagador(final String bairroPagador) {
         this.bairroPagador = bairroPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setMunicipioPagador(final String municipioPagador) {
+    public BBRRegistroRetornoBoleto setMunicipioPagador(final String municipioPagador) {
         this.municipioPagador = municipioPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setUfPagador(final String ufPagador) {
+    public BBRRegistroRetornoBoleto setUfPagador(final String ufPagador) {
         this.ufPagador = ufPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setCepPagador(final String cepPagador) {
+    public BBRRegistroRetornoBoleto setCepPagador(final String cepPagador) {
         this.cepPagador = cepPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setCepComplementoPagador(final String cepComplementoPagador) {
+    public BBRRegistroRetornoBoleto setCepComplementoPagador(final String cepComplementoPagador) {
         this.cepComplementoPagador = cepComplementoPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setEndEletronicoPagador(final String endEletronicoPagador) {
+    public BBRRegistroRetornoBoleto setEndEletronicoPagador(final String endEletronicoPagador) {
         this.endEletronicoPagador = endEletronicoPagador;
         return this;
     }
 
-    public RegistroRetornoBoleto setNomeSacadorAvalista(final String nomeSacadorAvalista) {
+    public BBRRegistroRetornoBoleto setNomeSacadorAvalista(final String nomeSacadorAvalista) {
         this.nomeSacadorAvalista = nomeSacadorAvalista;
         return this;
     }
 
-    public RegistroRetornoBoleto setCpfcnpjSacadorAvalista(final String cpfcnpjSacadorAvalista) {
+    public BBRRegistroRetornoBoleto setCpfcnpjSacadorAvalista(final String cpfcnpjSacadorAvalista) {
         this.cpfcnpjSacadorAvalista = cpfcnpjSacadorAvalista;
         return this;
     }
 
-    public RegistroRetornoBoleto setEnderecoSacadorAvalista(final String enderecoSacadorAvalista) {
+    public BBRRegistroRetornoBoleto setEnderecoSacadorAvalista(final String enderecoSacadorAvalista) {
         this.enderecoSacadorAvalista = enderecoSacadorAvalista;
         return this;
     }
 
-    public RegistroRetornoBoleto setMunicipioSacadorAvalista(final String municipioSacadorAvalista) {
+    public BBRRegistroRetornoBoleto setMunicipioSacadorAvalista(final String municipioSacadorAvalista) {
         this.municipioSacadorAvalista = municipioSacadorAvalista;
         return this;
     }
 
-    public RegistroRetornoBoleto setUfSacadorAvalista(final String ufSacadorAvalista) {
+    public BBRRegistroRetornoBoleto setUfSacadorAvalista(final String ufSacadorAvalista) {
         this.ufSacadorAvalista = ufSacadorAvalista;
         return this;
     }
 
-    public RegistroRetornoBoleto setCepSacadorAvalista(final String cepSacadorAvalista) {
+    public BBRRegistroRetornoBoleto setCepSacadorAvalista(final String cepSacadorAvalista) {
         this.cepSacadorAvalista = cepSacadorAvalista;
         return this;
     }
 
-    public RegistroRetornoBoleto setNumeroTitulo(final String numeroTitulo) {
+    public BBRRegistroRetornoBoleto setNumeroTitulo(final String numeroTitulo) {
         this.numeroTitulo = numeroTitulo;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtRegistro(final String dtRegistro) {
+    public BBRRegistroRetornoBoleto setDtRegistro(final String dtRegistro) {
         this.dtRegistro = dtRegistro;
         return this;
     }
 
-    public RegistroRetornoBoleto setEspecieDocumentoTitulo(final String especieDocumentoTitulo) {
+    public BBRRegistroRetornoBoleto setEspecieDocumentoTitulo(final String especieDocumentoTitulo) {
         this.especieDocumentoTitulo = especieDocumentoTitulo;
         return this;
     }
 
-    public RegistroRetornoBoleto setDescEspecie(final String descEspecie) {
+    public BBRRegistroRetornoBoleto setDescEspecie(final String descEspecie) {
         this.descEspecie = descEspecie;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlIOF(final String vlIOF) {
+    public BBRRegistroRetornoBoleto setVlIOF(final String vlIOF) {
         this.vlIOF = vlIOF;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtEmissao(final String dtEmissao) {
+    public BBRRegistroRetornoBoleto setDtEmissao(final String dtEmissao) {
         this.dtEmissao = dtEmissao;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtVencimento(final String dtVencimento) {
+    public BBRRegistroRetornoBoleto setDtVencimento(final String dtVencimento) {
         this.dtVencimento = dtVencimento;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlTitulo(final String vlTitulo) {
+    public BBRRegistroRetornoBoleto setVlTitulo(final String vlTitulo) {
         this.vlTitulo = vlTitulo;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlAbatimento(final String vlAbatimento) {
+    public BBRRegistroRetornoBoleto setVlAbatimento(final String vlAbatimento) {
         this.vlAbatimento = vlAbatimento;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtInstrucaoProtestoNegativacao(final String dtInstrucaoProtestoNegativacao) {
+    public BBRRegistroRetornoBoleto setDtInstrucaoProtestoNegativacao(final String dtInstrucaoProtestoNegativacao) {
         this.dtInstrucaoProtestoNegativacao = dtInstrucaoProtestoNegativacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setDiasInstrucaoProtestoNegativacao(final String diasInstrucaoProtestoNegativacao) {
+    public BBRRegistroRetornoBoleto setDiasInstrucaoProtestoNegativacao(final String diasInstrucaoProtestoNegativacao) {
         this.diasInstrucaoProtestoNegativacao = diasInstrucaoProtestoNegativacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtMulta(final String dtMulta) {
+    public BBRRegistroRetornoBoleto setDtMulta(final String dtMulta) {
         this.dtMulta = dtMulta;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlMulta(final String vlMulta) {
+    public BBRRegistroRetornoBoleto setVlMulta(final String vlMulta) {
         this.vlMulta = vlMulta;
         return this;
     }
 
-    public RegistroRetornoBoleto setQtdeCasasDecimaisMulta(final String qtdeCasasDecimaisMulta) {
+    public BBRRegistroRetornoBoleto setQtdeCasasDecimaisMulta(final String qtdeCasasDecimaisMulta) {
         this.qtdeCasasDecimaisMulta = qtdeCasasDecimaisMulta;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdValorMulta(final String cdValorMulta) {
+    public BBRRegistroRetornoBoleto setCdValorMulta(final String cdValorMulta) {
         this.cdValorMulta = cdValorMulta;
         return this;
     }
 
-    public RegistroRetornoBoleto setDescCdMulta(final String descCdMulta) {
+    public BBRRegistroRetornoBoleto setDescCdMulta(final String descCdMulta) {
         this.descCdMulta = descCdMulta;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtJuros(final String dtJuros) {
+    public BBRRegistroRetornoBoleto setDtJuros(final String dtJuros) {
         this.dtJuros = dtJuros;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlJurosAoDia(final String vlJurosAoDia) {
+    public BBRRegistroRetornoBoleto setVlJurosAoDia(final String vlJurosAoDia) {
         this.vlJurosAoDia = vlJurosAoDia;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtDesconto1Bonificacao(final String dtDesconto1Bonificacao) {
+    public BBRRegistroRetornoBoleto setDtDesconto1Bonificacao(final String dtDesconto1Bonificacao) {
         this.dtDesconto1Bonificacao = dtDesconto1Bonificacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlDesconto1Bonificacao(final String vlDesconto1Bonificacao) {
+    public BBRRegistroRetornoBoleto setVlDesconto1Bonificacao(final String vlDesconto1Bonificacao) {
         this.vlDesconto1Bonificacao = vlDesconto1Bonificacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setQtdeCasasDecimaisDesconto1Bonificacao(final String qtdeCasasDecimaisDesconto1Bonificacao) {
+    public BBRRegistroRetornoBoleto setQtdeCasasDecimaisDesconto1Bonificacao(final String qtdeCasasDecimaisDesconto1Bonificacao) {
         this.qtdeCasasDecimaisDesconto1Bonificacao = qtdeCasasDecimaisDesconto1Bonificacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdValorDesconto1Bonificacao(final String cdValorDesconto1Bonificacao) {
+    public BBRRegistroRetornoBoleto setCdValorDesconto1Bonificacao(final String cdValorDesconto1Bonificacao) {
         this.cdValorDesconto1Bonificacao = cdValorDesconto1Bonificacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setDescCdDesconto1Bonificacao(final String descCdDesconto1Bonificacao) {
+    public BBRRegistroRetornoBoleto setDescCdDesconto1Bonificacao(final String descCdDesconto1Bonificacao) {
         this.descCdDesconto1Bonificacao = descCdDesconto1Bonificacao;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtDesconto2(final String dtDesconto2) {
+    public BBRRegistroRetornoBoleto setDtDesconto2(final String dtDesconto2) {
         this.dtDesconto2 = dtDesconto2;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlDesconto2(final String vlDesconto2) {
+    public BBRRegistroRetornoBoleto setVlDesconto2(final String vlDesconto2) {
         this.vlDesconto2 = vlDesconto2;
         return this;
     }
 
-    public RegistroRetornoBoleto setQtdeCasasDecimaisDesconto2(final String qtdeCasasDecimaisDesconto2) {
+    public BBRRegistroRetornoBoleto setQtdeCasasDecimaisDesconto2(final String qtdeCasasDecimaisDesconto2) {
         this.qtdeCasasDecimaisDesconto2 = qtdeCasasDecimaisDesconto2;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdValorDesconto2(final String cdValorDesconto2) {
+    public BBRRegistroRetornoBoleto setCdValorDesconto2(final String cdValorDesconto2) {
         this.cdValorDesconto2 = cdValorDesconto2;
         return this;
     }
 
-    public RegistroRetornoBoleto setDescCdDesconto2(final String descCdDesconto2) {
+    public BBRRegistroRetornoBoleto setDescCdDesconto2(final String descCdDesconto2) {
         this.descCdDesconto2 = descCdDesconto2;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtDesconto3(final String dtDesconto3) {
+    public BBRRegistroRetornoBoleto setDtDesconto3(final String dtDesconto3) {
         this.dtDesconto3 = dtDesconto3;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlDesconto3(final String vlDesconto3) {
+    public BBRRegistroRetornoBoleto setVlDesconto3(final String vlDesconto3) {
         this.vlDesconto3 = vlDesconto3;
         return this;
     }
 
-    public RegistroRetornoBoleto setQtdeCasasDecimaisDesconto3(final String qtdeCasasDecimaisDesconto3) {
+    public BBRRegistroRetornoBoleto setQtdeCasasDecimaisDesconto3(final String qtdeCasasDecimaisDesconto3) {
         this.qtdeCasasDecimaisDesconto3 = qtdeCasasDecimaisDesconto3;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdValorDesconto3(final String cdValorDesconto3) {
+    public BBRRegistroRetornoBoleto setCdValorDesconto3(final String cdValorDesconto3) {
         this.cdValorDesconto3 = cdValorDesconto3;
         return this;
     }
 
-    public RegistroRetornoBoleto setDescCdDesconto3(final String descCdDesconto3) {
+    public BBRRegistroRetornoBoleto setDescCdDesconto3(final String descCdDesconto3) {
         this.descCdDesconto3 = descCdDesconto3;
         return this;
     }
 
-    public RegistroRetornoBoleto setDiasDispensaMulta(final String diasDispensaMulta) {
+    public BBRRegistroRetornoBoleto setDiasDispensaMulta(final String diasDispensaMulta) {
         this.diasDispensaMulta = diasDispensaMulta;
         return this;
     }
 
-    public RegistroRetornoBoleto setDiasDispensaJuros(final String diasDispensaJuros) {
+    public BBRRegistroRetornoBoleto setDiasDispensaJuros(final String diasDispensaJuros) {
         this.diasDispensaJuros = diasDispensaJuros;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdBarras(final String cdBarras) {
+    public BBRRegistroRetornoBoleto setCdBarras(final String cdBarras) {
         this.cdBarras = cdBarras;
         return this;
     }
 
-    public RegistroRetornoBoleto setLinhaDigitavel(final String linhaDigitavel) {
+    public BBRRegistroRetornoBoleto setLinhaDigitavel(final String linhaDigitavel) {
         this.linhaDigitavel = linhaDigitavel;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdAcessorioEscrituralEmpresa(final String cdAcessorioEscrituralEmpresa) {
+    public BBRRegistroRetornoBoleto setCdAcessorioEscrituralEmpresa(final String cdAcessorioEscrituralEmpresa) {
         this.cdAcessorioEscrituralEmpresa = cdAcessorioEscrituralEmpresa;
         return this;
     }
 
-    public RegistroRetornoBoleto setTpVencimento(final String tpVencimento) {
+    public BBRRegistroRetornoBoleto setTpVencimento(final String tpVencimento) {
         this.tpVencimento = tpVencimento;
         return this;
     }
 
-    public RegistroRetornoBoleto setIndInstrucaoProtesto(final String indInstrucaoProtesto) {
+    public BBRRegistroRetornoBoleto setIndInstrucaoProtesto(final String indInstrucaoProtesto) {
         this.indInstrucaoProtesto = indInstrucaoProtesto;
         return this;
     }
 
-    public RegistroRetornoBoleto setTipoAbatimentoTitulo(final String tipoAbatimentoTitulo) {
+    public BBRRegistroRetornoBoleto setTipoAbatimentoTitulo(final String tipoAbatimentoTitulo) {
         this.tipoAbatimentoTitulo = tipoAbatimentoTitulo;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdValorJuros(final String cdValorJuros) {
+    public BBRRegistroRetornoBoleto setCdValorJuros(final String cdValorJuros) {
         this.cdValorJuros = cdValorJuros;
         return this;
     }
 
-    public RegistroRetornoBoleto setTpDesconto1(final String tpDesconto1) {
+    public BBRRegistroRetornoBoleto setTpDesconto1(final String tpDesconto1) {
         this.tpDesconto1 = tpDesconto1;
         return this;
     }
 
-    public RegistroRetornoBoleto setTpDesconto2(final String tpDesconto2) {
+    public BBRRegistroRetornoBoleto setTpDesconto2(final String tpDesconto2) {
         this.tpDesconto2 = tpDesconto2;
         return this;
     }
 
-    public RegistroRetornoBoleto setTpDesconto3(final String tpDesconto3) {
+    public BBRRegistroRetornoBoleto setTpDesconto3(final String tpDesconto3) {
         this.tpDesconto3 = tpDesconto3;
         return this;
     }
 
-    public RegistroRetornoBoleto setNuControleParticipante(final String nuControleParticipante) {
+    public BBRRegistroRetornoBoleto setNuControleParticipante(final String nuControleParticipante) {
         this.nuControleParticipante = nuControleParticipante;
         return this;
     }
 
-    public RegistroRetornoBoleto setDiasJuros(final String diasJuros) {
+    public BBRRegistroRetornoBoleto setDiasJuros(final String diasJuros) {
         this.diasJuros = diasJuros;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdJuros(final String cdJuros) {
+    public BBRRegistroRetornoBoleto setCdJuros(final String cdJuros) {
         this.cdJuros = cdJuros;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlJuros(final String vlJuros) {
+    public BBRRegistroRetornoBoleto setVlJuros(final String vlJuros) {
         this.vlJuros = vlJuros;
         return this;
     }
 
-    public RegistroRetornoBoleto setCpfcnpjBeneficiario(final String cpfcnpjBeneficiario) {
+    public BBRRegistroRetornoBoleto setCpfcnpjBeneficiario(final String cpfcnpjBeneficiario) {
         this.cpfcnpjBeneficiario = cpfcnpjBeneficiario;
         return this;
     }
 
-    public RegistroRetornoBoleto setVlTituloEmitidoBoleto(final String vlTituloEmitidoBoleto) {
+    public BBRRegistroRetornoBoleto setVlTituloEmitidoBoleto(final String vlTituloEmitidoBoleto) {
         this.vlTituloEmitidoBoleto = vlTituloEmitidoBoleto;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtVencimentoBoleto(final String dtVencimentoBoleto) {
+    public BBRRegistroRetornoBoleto setDtVencimentoBoleto(final String dtVencimentoBoleto) {
         this.dtVencimentoBoleto = dtVencimentoBoleto;
         return this;
     }
 
-    public RegistroRetornoBoleto setIndTituloPertenceBaseTitulos(final String indTituloPertenceBaseTitulos) {
+    public BBRRegistroRetornoBoleto setIndTituloPertenceBaseTitulos(final String indTituloPertenceBaseTitulos) {
         this.indTituloPertenceBaseTitulos = indTituloPertenceBaseTitulos;
         return this;
     }
 
-    public RegistroRetornoBoleto setDtLimitePagamentoBoleto(final String dtLimitePagamentoBoleto) {
+    public BBRRegistroRetornoBoleto setDtLimitePagamentoBoleto(final String dtLimitePagamentoBoleto) {
         this.dtLimitePagamentoBoleto = dtLimitePagamentoBoleto;
         return this;
     }
 
-    public RegistroRetornoBoleto setCdIdentificacaoTituloDDACIP(final String cdIdentificacaoTituloDDACIP) {
+    public BBRRegistroRetornoBoleto setCdIdentificacaoTituloDDACIP(final String cdIdentificacaoTituloDDACIP) {
         this.cdIdentificacaoTituloDDACIP = cdIdentificacaoTituloDDACIP;
         return this;
     }
 
-    public RegistroRetornoBoleto setIndPagamentoParcial(final String indPagamentoParcial) {
+    public BBRRegistroRetornoBoleto setIndPagamentoParcial(final String indPagamentoParcial) {
         this.indPagamentoParcial = indPagamentoParcial;
         return this;
     }
 
-    public RegistroRetornoBoleto setQtdePagamentoParciais(final String qtdePagamentoParciais) {
+    public BBRRegistroRetornoBoleto setQtdePagamentoParciais(final String qtdePagamentoParciais) {
         this.qtdePagamentoParciais = qtdePagamentoParciais;
         return this;
     }

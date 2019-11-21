@@ -27,3 +27,8 @@ hs_err_pid*
 
 # Visual Studio Code
 .vscode
+
+# Idea
+*.iml
+.idea
+target

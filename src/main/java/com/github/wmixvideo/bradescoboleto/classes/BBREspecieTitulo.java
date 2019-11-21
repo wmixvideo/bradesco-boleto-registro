@@ -1,6 +1,6 @@
 package com.github.wmixvideo.bradescoboleto.classes;
 
-public enum EspecieTitulo {
+public enum BBREspecieTitulo {
 
     CH("01", "CH", "CHEQUE"),
     DM("02", "DM", "DUPLICATA DE VENDA MERCANTIL"),
@@ -39,7 +39,7 @@ public enum EspecieTitulo {
     private final String sigla;
     private final String descricao;
 
-    EspecieTitulo(final String codigo, final String sigla, final String descricao) {
+    BBREspecieTitulo(final String codigo, final String sigla, final String descricao) {
         this.codigo = codigo;
         this.sigla = sigla;
         this.descricao = descricao;
@@ -53,8 +53,8 @@ public enum EspecieTitulo {
         return this.sigla;
     }
 
-    public static EspecieTitulo valueOfSigla(final String sigla) {
-        for (final EspecieTitulo especie : EspecieTitulo.values()) {
+    public static BBREspecieTitulo valueOfSigla(final String sigla) {
+        for (final BBREspecieTitulo especie : BBREspecieTitulo.values()) {
             if (especie.getSigla().equalsIgnoreCase(sigla)) {
                 return especie;
             }
