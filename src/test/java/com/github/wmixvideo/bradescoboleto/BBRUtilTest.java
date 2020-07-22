@@ -1,13 +1,12 @@
 package com.github.wmixvideo.bradescoboleto;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class BBRUtilTest {
 
@@ -38,7 +37,7 @@ public class BBRUtilTest {
         Assert.assertEquals("", BBRUtil.formataValor(null, true, "Teste Valor"));
     }
 
-   @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void formataValorObrigatoriaComTextoInvalido() {
         Assert.assertEquals("", BBRUtil.formataString("'(", 15,true, "Teste Valor",true));
     }
@@ -65,9 +64,17 @@ public class BBRUtilTest {
     }
 
     @Test
+    public void formataTextoSomenteNumeros() {
+        Assert.assertEquals("123", BBRUtil.formataStringApenasNumeros("TESTE123", 4, true, "Teste Texto", true));
+        Assert.assertEquals("12345", BBRUtil.formataStringApenasNumeros("T1E2S3TE456", 5, true, "Teste Texto", true));
+    }
+
+    @Test
     public void formataTexto() {
         Assert.assertEquals("TEST", BBRUtil.formataString("TESTE", 4, true, "Teste Texto", true));
         Assert.assertEquals("TESTE", BBRUtil.formataString("TESTE", 15, false, "Teste Texto", true));
+        Assert.assertEquals("Acentuacao e caracteres invalidos .,", BBRUtil.formataString("Acentuação e caracteres inválidos @.,'", 40, true, "Teste limite maximo", false));
+        Assert.assertEquals("Acentuacao e caracteres invalidos .,-", BBRUtil.formataString("Acentuação e caracteres inválidos @.,[]{}()_-'", 40, true, "Teste limite maximo", false));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -81,16 +88,11 @@ public class BBRUtilTest {
         Assert.assertEquals("", BBRUtil.formataString(null, 0, true, "Teste Texto", false));
     }
 
-
-    @Test
-    public void formataTextoRemoveAcentuacao(){
-        Assert.assertEquals("aaaaaeeeeiiiioooouuuuncyrsnpwgnmuxzh",BBRUtil.removeAcentuacao("àáäâãèéëêìíïîòóöôùúüûñçÿŕśńṕẃǵǹḿǘẍźḧ"));
-    }
-
     @Test
     public void formataTextoRemoveCaracteresEspeciais(){
         Assert.assertEquals("dagua", BBRUtil.removeCaracteresEspeciais("d'agua"));
         Assert.assertEquals("Endereco complementar", BBRUtil.removeCaracteresEspeciais("Endereco (complementar)"));
+        Assert.assertEquals("Endereco .,", BBRUtil.removeCaracteresEspeciais("Endereço (.,)"));
     }
 
     @Test
@@ -101,4 +103,15 @@ public class BBRUtilTest {
         Assert.assertEquals("012345678901234", BBRUtil.formataString("012345678901234'", 15, true, "Teste limite maximo", false));
     }
 
+    @Test
+    public void formataEmail(){
+        Assert.assertEquals("teste@teste.com.br", BBRUtil.formataEmail("teste@teste.com.br", 40, true, "Teste limite maximo", false));
+        Assert.assertEquals("teste123@teste.com.br", BBRUtil.formataEmail("teste123@teste.com.br", 40, true, "Teste limite maximo", false));
+        Assert.assertEquals("", BBRUtil.formataEmail(null, 40, true, "Teste limite maximo", false));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testaEmailInvalido(){
+        Assert.assertEquals("teste1teste.com.br", BBRUtil.formataEmail("teste1teste.com.br", 40, true, "Teste limite maximo", false));
+    }
 }
